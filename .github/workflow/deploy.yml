@@ -1,0 +1,22 @@
+name: Node.js CL
+on:
+  push:
+     branches:
+         -main
+
+         jobs:
+           bulid:
+
+           runs-on:ubuntu-lastest
+             strategy:
+              martix:
+                node-verison:[20.x]
+                steps:
+                -name:checkout repository
+                uses: actions/checkout@v3
+                with:
+                node-verison: ${{ martix.node.verison}}
+                -name:install dependencies
+                run:npm start
+                -name:start application
+                run
